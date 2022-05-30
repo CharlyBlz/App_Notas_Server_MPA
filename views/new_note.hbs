@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>New Note</title>
+    <style>
+            html,body{
+            height: 100%;
+            margin: 0;
+        }
+        .bg {
+            /* The image used */
+            background-image: url("img/back5.jpg");
+
+            /* Full height */
+            height: 75%; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .padre{
+            
+            /*IMPORTANTE*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #inputbtn{
+            width: 7%;
+            background-color: cadetblue;
+            color: white;
+        }
+        .formulario{
+          padding-right: 50px;
+          width: 220px;
+          text-align: center;
+        }
+        .c_btn{
+          width: 7%;
+          background-color: cadetblue;
+          color: white;
+        }
+        </style>
+</head>
+<body>
+    {{>header}}
+    <div class="bg">
+    <form id="formulario" class="box" action="/create_note" method="post">
+  <div class="field">
+
+<div>
+    <label class="label">Note Number (DO NOT REPEAT)</label>
+    <div class="control">
+      <input class="input" type="number" name="id" placeholder="Numbers Only!">
+    </div>
+  </div>
+
+
+    <label class="label">Title</label>
+    <div class="control">
+      <input class="input" type="text" name="title" placeholder="Your note title here">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Body</label>
+    <div class="control">
+      <input class="input" type="text" name="body1" placeholder="Your note body here">
+    </div>
+  </div>
+
+  <input id="inputbtn" class="button" type="submit" value="Create Note" >
+
+</form>
+</div>
+    <!--
+        form class="box" action="/create_note" method="post" formulario
+        input class="input" type="submit" value="Create Note" botón
+    -->
+</div>
+    {{>footer}}
+</body>
+</html>

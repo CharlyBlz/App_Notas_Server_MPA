@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List Notes</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <style>
+            .btn{
+                position: relative;
+            }
+            button{
+                position:absolute;
+                
+            }
+            html,body{
+            height: 100%;
+
+
+            margin: 0;
+        }
+        .bg {
+            /* The image used */
+            background-image: url("img/back3.jpg");
+
+            /* Full height */
+            height: 75%; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .mbtn{
+            height: 10%; width: 10%;
+        }
+        .dbtn{
+            height: 10%; width: 10%;
+        }
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        {{>header}}
+        <div class="bg">
+            <table class="table" align="center">
+                <thead>
+                    <tr class="is-selected">
+                    <!--abbr es un elemento de abreviación <abbr title="ID"></abbr>-->
+                    <th align="center">NOTE NUMBER</th>
+                    <th align="center">TITLE</th>
+                    <th align="center">BODY</th>
+                    <th align="center">ACTIONS</th>
+                    </tr>
+                </thead>
+                    
+
+                <tbody align="center">
+                    {{#each notes1}}
+                        <tr>
+                            
+                            <td>
+                                {{id}}
+                            </td>
+                            
+                            <td >
+                                {{title}}
+                            </td>
+                            
+                            <td>
+                                {{body}}
+                            </td>
+                            <td>
+                                <!--
+                                <a href="/modify_note/{{title}}">
+                                -->
+                                <a href="/modify_note/{{id}}">
+                                <img src="img/edit.png" alt="Modify icon" class="mbtn">
+                                </a>
+                                
+                                <a href="/delete_note/{{title}}">
+                                <img src="img/delete.png" alt="Delete icon" class="dbtn">
+                                </a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{>footer}}
+    </body>
+    
+   
+</html>
